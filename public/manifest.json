@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Countdown Timer Extension",
+  "version": "1.0",
+  "description": "A simple Chrome extension with a countdown timer.",
+  "action": {
+    "default_icon": {
+      "16": "images/16.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
+    }
+  },
+  "host_permissions": ["*://*/*"],
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "activeTab",
+    "alarms",
+    "storage",
+    "contextMenus",
+    "offscreen"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "index.html",
+        "notification.mp3",
+        "offscreen.html",
+        "offscreen.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "images/16.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
+  }
+}
